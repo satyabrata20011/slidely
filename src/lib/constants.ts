@@ -82,20 +82,20 @@ export const CreatePageCard = [
   {
     title: "Use a",
     highlightedText: "Template",
-    description: "Write a prompt and leave everything else for us to handle",
+    description: "Use from a stored purchased slidely template",
     type: "template",
   },
   {
     title: "Generate with",
     highlightedText: "Slidely AI",
-    description: "Write a prompt and leave everything else for us to handle",
+    description: "Create Slides using Slidely AI Assist",
     type: "creative-ai",
     highlight: true,
   },
   {
     title: "Start from",
     highlightedText: "Scratch",
-    description: "Write a prompt and leave everything else for us to handle",
+    description: "Create an slides from scratch",
     type: "create-scratch",
   },
 ];
