@@ -34,6 +34,13 @@ const useCases = [
 ];
 
 export default function Page() {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#000000] text-white">
       {/* Header */}
@@ -41,18 +48,18 @@ export default function Page() {
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold">Slidely</div>
           <div className="space-x-8">
-            <Link
-              href="/features"
+            <button
+              onClick={() => scrollToSection("features")}
               className="text-sm text-white/70 hover:text-white transition-colors"
             >
               Features
-            </Link>
-            <Link
-              href="/pricing"
+            </button>
+            <button
+              onClick={() => scrollToSection("pricing")}
               className="text-sm text-white/70 hover:text-white transition-colors"
             >
               Pricing
-            </Link>
+            </button>
             <Button
               variant="outline"
               className="border-white/10 hover:bg-white hover:text-black transition-colors"
@@ -111,7 +118,7 @@ export default function Page() {
       </section>
 
       {/* Features Section */}
-      <section className="py-32 relative">
+      <section id="features" className="py-32 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
             <h2 className="text-4xl font-bold mb-4">Powerful Features</h2>
@@ -159,7 +166,7 @@ export default function Page() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 relative">
+      <section id="pricing" className="py-20 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-md mx-auto p-8 rounded-xl bg-black/50 border border-white/10 backdrop-blur-sm">
             <h3 className="text-2xl font-bold text-center mb-2">Pro Plan</h3>
@@ -219,20 +226,20 @@ export default function Page() {
               <h4 className="font-semibold mb-6">Product</h4>
               <ul className="space-y-4 text-white/60">
                 <li>
-                  <Link
-                    href="/features"
+                  <button
+                    onClick={() => scrollToSection("features")}
                     className="hover:text-white transition-colors"
                   >
                     Features
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link
-                    href="/pricing"
+                  <button
+                    onClick={() => scrollToSection("pricing")}
                     className="hover:text-white transition-colors"
                   >
                     Pricing
-                  </Link>
+                  </button>
                 </li>
                 <li>
                   <Link
